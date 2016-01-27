@@ -20,7 +20,6 @@ router.post('/login', function(req, res, next) {
        if (found){
          if (bcrypt.compareSync(req.body.password, found.password))
          res.cookie('user', req.body.email)
-         res.cookie('password', req.body.password)
          res.redirect("/tickets");
        } else {
          res.redirect("/no_auth");
