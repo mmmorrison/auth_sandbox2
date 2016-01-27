@@ -7,9 +7,13 @@ function Tickets() {
 }
 
 router.get('/', function(req, res, next) {
+  if (req.cookies.user){
+    res.redirect('/tickets/index')
+  } else {
     Tickets().select().then(function (tickets) {
       res.render('tickets/index', {tickets: tickets});
-    });
+    })
+    }
 });
 
 router.post('/', function(req, res, next) {
