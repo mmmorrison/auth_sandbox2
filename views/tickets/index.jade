@@ -3,6 +3,8 @@ extends ../layout
 block content
 
   h1 Open Tickets
+  if logged_in
+    p you have access to tickets now
   if tickets
     table.table.table-pattern
      thead

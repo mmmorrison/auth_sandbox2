@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  div.container
+    if employee
+      h1 Editing employee #{employee.id}
+      form(action="/employees/#{employee.id}/update" method="POST")
+        include form.jade

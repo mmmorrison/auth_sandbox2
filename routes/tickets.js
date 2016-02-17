@@ -7,24 +7,27 @@ function Tickets() {
 }
 
 router.get('/', function(req, res, next) {
-  if (req.cookies.user){
+    console.log("reached tickets");
     Tickets().select().then(function (tickets) {
       res.render('tickets/index', {tickets: tickets});
+<<<<<<< HEAD
     })
   } else {
     res.redirect("/");
   }
 
+=======
+    });
+>>>>>>> be8cd963e4fc2410d452da773ce20618a313c2b3
 });
 
 router.post('/', function(req, res, next) {
   Tickets().insert(req.body).then(function (tickets) {
     res.redirect('tickets/');
-  })
+  });
 });
 
 router.post('/:id/update', function(req, res, next) {
-  console.log("body is "+JSON.stringify(req.body));
   Tickets().where({id: req.params.id}).update(req.body).then(function(tickets) {
     res.redirect('/');
   })

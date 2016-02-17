@@ -1,0 +1,13 @@
+extends ../layout 
+
+block content 
+  if ticket
+    div.well.well-lg
+      h1= ticket.title 
+      h3= ticket.author
+      p Rating: #{ticket.rating}
+      p= ticket.description 
+      p 
+        a.btn-link(href='/tickets/edit') Edit
+        form(action='#' method='')
+          input.btn.btn-link(type='submit' value='Delete')

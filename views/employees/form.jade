@@ -1,0 +1,11 @@
+div.form-box-container
+  div.form-box
+    div.form-group
+      label(for="author") Name
+      input.form-control(type="text" id="name" name="name" value="#{employee ? employee.name : ''}" placeholder="employee name")
+    div.form-group
+      label(for="title") Team
+      input.form-control(type="text" id="team"  name="team" placeholder="team")
+  div.form-box
+
+    button.btn.btn-primary(type="submit") #{button_text}

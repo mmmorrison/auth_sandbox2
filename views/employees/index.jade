@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+
+  h1 Employees
+  if logged_in
+    p you have access to employees now
+  if employees
+    table.table.table-pattern
+     thead
+       tr
+         th Employees id
+         th Employee Name
+         th Group
+         th
+     tbody
+       for employee in employees
+         tr
+           td
+             a(href='/employees/#{employee.id}/edit') #{employee.id}
+           td= employee.name
+           td= group
+           td
+            a(href='/employees/#{employee.id}/delete') delete
+
+
+   div
+   a(href='/employees/new') Add a new employee

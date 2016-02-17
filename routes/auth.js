@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt')
 
+<<<<<<< HEAD
 router.get('/', function(req, res, next) {
   if (req.signedCookies.user){
     res.redirect("/tickets");
@@ -9,6 +10,8 @@ router.get('/', function(req, res, next) {
     res.render("auth/signin", {button_text: "sign in"});
   }
 });
+=======
+>>>>>>> be8cd963e4fc2410d452da773ce20618a313c2b3
 
 router.get('/signin', function(req, res, next) {
     if (req.signedCookies.user){
@@ -31,8 +34,11 @@ router.get('/no_auth', function(req, res, next) {
     res.render("auth/yousuck");
 });
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> be8cd963e4fc2410d452da773ce20618a313c2b3
 
 module.exports = router;

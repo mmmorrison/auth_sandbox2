@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+
+  div.container
+    h1 Add a New Employee
+    form(action="/employees" method="POST")
+      include form.jade
